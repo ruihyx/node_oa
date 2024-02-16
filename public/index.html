@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Scrape Zillow</title>
+	</head>
+	<body>
+		<h1>Trigger Zillow Scraping</h1>
+		<button id="scrapeButton">Scrape Zillow</button>
+
+		<script>
+			document.getElementById("scrapeButton").onclick = function () {
+				fetch("/scrape-zillow")
+					.then((response) => response.text())
+					.then((data) => alert(data))
+					.catch((error) => console.error("Error:", error));
+			};
+		</script>
+	</body>
+</html>
